@@ -22,6 +22,7 @@ namespace TPModule3
 
             //Afficher l’auteur ayant écrit le plus de livres 
             var auteurPlusDeLivres = ListeLivres.GroupBy(l => l.Auteur).OrderByDescending(c => c.Count()).FirstOrDefault().Key;
+            // max(g.count()) à la place de orderBy
             Console.WriteLine();
             Console.WriteLine("Afficher l’auteur ayant écrit le plus de livres :");
             Console.WriteLine($"{auteurPlusDeLivres.Prenom} {auteurPlusDeLivres.Nom}");
@@ -32,7 +33,7 @@ namespace TPModule3
             Console.WriteLine("Afficher le nombre moyen de pages par livre par auteur :");
             foreach (var nb in nbPagesParLivreParAuteur)
             {
-                Console.WriteLine($"{nb.Key.Prenom} {nb.Key.Prenom} Moyennes des pages= {nb.Average(l=>l.NbPages)}");
+                Console.WriteLine($"{nb.Key.Prenom} {nb.Key.Nom} ,Moyennes des pages= {nb.Average(l=>l.NbPages)}");
             }
 
             //Afficher le titre du livre avec le plus de pages
@@ -83,7 +84,7 @@ namespace TPModule3
             //Afficher l'auteur ayant écrit le moins de livres
             var auteurMoinsLivres = ListeAuteurs.OrderBy(a => ListeLivres.Count(l => l.Auteur == a)).First();
             Console.WriteLine();
-            Console.WriteLine($"Afficher l'auteur ayant écrit le moins de livres : {auteurMoinsLivres.Prenom} {auteurMoinsLivres.Nom} : ");
+            Console.WriteLine($"Afficher l'auteur ayant écrit le moins de livres : {auteurMoinsLivres.Prenom} {auteurMoinsLivres.Nom}  ");
 
             Console.ReadKey();
         }
