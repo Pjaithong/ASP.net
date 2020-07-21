@@ -1,0 +1,7 @@
+C:\Users\patch\source\repos\TP01\TPModule3\bin\Debug\TPModule3.exe.config
+C:\Users\patch\source\repos\TP01\TPModule3\bin\Debug\TPModule3.exe
+C:\Users\patch\source\repos\TP01\TPModule3\bin\Debug\TPModule3.pdb
+C:\Users\patch\source\repos\TP01\TPModule3\obj\Debug\TPModule3.csprojAssemblyReference.cache
+C:\Users\patch\source\repos\TP01\TPModule3\obj\Debug\TPModule3.csproj.CoreCompileInputs.cache
+C:\Users\patch\source\repos\TP01\TPModule3\obj\Debug\TPModule3.exe
+C:\Users\patch\source\repos\TP01\TPModule3\obj\Debug\TPModule3.pdb
