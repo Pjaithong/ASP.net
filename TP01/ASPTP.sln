@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP01", "TP01\TP01.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPModule3", "TPModule3\TPModule3.csproj", "{89B0FCB8-038F-4CDD-B00B-76E426048363}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPChats", "TPChats\TPChats.csproj", "{3C5FB9AC-0F02-47D3-BCC5-E6BEABEACD96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{89B0FCB8-038F-4CDD-B00B-76E426048363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89B0FCB8-038F-4CDD-B00B-76E426048363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89B0FCB8-038F-4CDD-B00B-76E426048363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C5FB9AC-0F02-47D3-BCC5-E6BEABEACD96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C5FB9AC-0F02-47D3-BCC5-E6BEABEACD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C5FB9AC-0F02-47D3-BCC5-E6BEABEACD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C5FB9AC-0F02-47D3-BCC5-E6BEABEACD96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
