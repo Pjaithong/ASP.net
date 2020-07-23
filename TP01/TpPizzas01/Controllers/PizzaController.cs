@@ -19,7 +19,16 @@ namespace TpPizzas01.Controllers
         // GET: Pizza/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            /*Pizza pizza = FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Id == id);
+            if (pizza!=null)
+            {
+                return View(pizza);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }*/
+            return View(FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Id == id));
         }
 
         // GET: Pizza/Create
@@ -58,8 +67,11 @@ namespace TpPizzas01.Controllers
             vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
             vm.Pates = FakeDb.Instance.PatesDisponibles;
             vm.Pizza = FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Id == id);
-
-            return View(vm);
+            if (vm!=null)
+            {
+                return View(vm);
+            }
+            return RedirectToAction("Index");
         }
 
         // POST: Pizza/Edit/5

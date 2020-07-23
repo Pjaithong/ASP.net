@@ -172,6 +172,8 @@
     <Content Include="Views\Pizza\Delete.cshtml" />
     <Content Include="Views\Pizza\Index.cshtml" />
     <Content Include="Views\Pizza\Create.cshtml" />
+    <Content Include="Views\Pizza\Details.cshtml" />
+    <Content Include="Views\Pizza\_PizzaDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
