@@ -67,11 +67,11 @@ namespace TpPizzas01.Controllers
             vm.Ingredients = FakeDb.Instance.IngredientsDisponibles;
             vm.Pates = FakeDb.Instance.PatesDisponibles;
             vm.Pizza = FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Id == id);
-            if (vm!=null)
-            {
+            /*if (vm!=null)
+            {*/
                 return View(vm);
-            }
-            return RedirectToAction("Index");
+            /*}
+            return RedirectToAction("Index");*/
         }
 
         // POST: Pizza/Edit/5
