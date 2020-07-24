@@ -147,7 +147,6 @@ namespace TpPizzas01.Controllers
                 isValidate = false;
             }
             //Le nom d'une pizza est unique
-            
             if (FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Nom == vm.Pizza.Nom) != null
                 && FakeDb.Instance.Pizzas.FirstOrDefault(p => p.Id == vm.Pizza.Id) == null )
             {
