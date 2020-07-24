@@ -13,8 +13,8 @@ namespace TpPizzas01.Database
 
         private FakeDb()
         {
-            this.Ingredients = this.IngredientsDisponibles;
-            this.Pates = this.PatesDisponibles;
+            this.IngredientsDisponibles = this.InitIngredientsDisponibles;
+            this.PatesDisponibles = this.InitPatesDisponibles;
             this.Pizzas = new List<Pizza>();
         }
 
@@ -35,17 +35,17 @@ namespace TpPizzas01.Database
         }
 
         private List<Ingredient> ingredients;
-        public List<Ingredient> Ingredients
+        public List<Ingredient> IngredientsDisponibles
         {
             get { return ingredients; }
-            private set { ingredients = value; }
+            private set { this.ingredients = value; }
         }
 
         private List<Pate> pates;
-        public List<Pate> Pates
+        public List<Pate> PatesDisponibles 
         {
             get { return pates; }
-            private set { pates = value; }
+            private set { this.pates = value; }
         }
 
         private List<Pizza> pizzas;
@@ -56,11 +56,8 @@ namespace TpPizzas01.Database
             private set { pizzas = value; }
         }
 
-       
 
-       
-
-        public List<Ingredient> IngredientsDisponibles { get; } = new List<Ingredient>
+        private List<Ingredient> InitIngredientsDisponibles { get; } = new List<Ingredient>
         {
             new Ingredient{Id=1,Nom="Mozzarella"},
             new Ingredient{Id=2,Nom="Jambon"},
@@ -72,7 +69,7 @@ namespace TpPizzas01.Database
             new Ingredient{Id=8,Nom="Poulet"}
         };
 
-        public List<Pate> PatesDisponibles { get; } = new List<Pate>
+        private List<Pate> InitPatesDisponibles { get; } = new List<Pate>
         {
             new Pate{ Id=1,Nom="Pate fine, base crême"},
             new Pate{ Id=2,Nom="Pate fine, base tomate"},

@@ -1,7 +1,6 @@
 C:\Users\patch\source\repos\TP01\TP01\bin\Debug\TP01.exe.config
 C:\Users\patch\source\repos\TP01\TP01\bin\Debug\TP01.exe
 C:\Users\patch\source\repos\TP01\TP01\bin\Debug\TP01.pdb
-C:\Users\patch\source\repos\TP01\TP01\obj\Debug\TP01.csprojAssemblyReference.cache
 C:\Users\patch\source\repos\TP01\TP01\obj\Debug\TP01.csproj.CoreCompileInputs.cache
 C:\Users\patch\source\repos\TP01\TP01\obj\Debug\TP01.exe
 C:\Users\patch\source\repos\TP01\TP01\obj\Debug\TP01.pdb
