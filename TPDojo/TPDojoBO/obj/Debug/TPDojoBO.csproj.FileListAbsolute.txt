@@ -1,0 +1,6 @@
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\TPDojoBO.dll
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\TPDojoBO.pdb
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.csproj.CoreCompileInputs.cache
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.dll
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.pdb
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.csprojAssemblyReference.cache
