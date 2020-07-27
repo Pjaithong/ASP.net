@@ -111,9 +111,27 @@ namespace TPDojo.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Arme arme = db.Armes.Find(id);
+            if ( ValidateArme(arme) )
+            {
+                return View(arme);
+            }
+            
             db.Armes.Remove(arme);
             db.SaveChanges();
             return RedirectToAction("Index");
+           
+            
+        }
+
+        private bool ValidateArme(Arme arme)
+        {
+            bool isAssociated = false;
+            if (db.Samourais.FirstOrDefault(s => s.Arme.Id == arme.Id) != null)
+            {
+                ModelState.AddModelError("Arme.associated", "Suppression impossible car elle est associée à un samourai");
+                isAssociated = true;
+            }
+            return isAssociated;
         }
 
         protected override void Dispose(bool disposing)
