@@ -4,45 +4,18 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Suppression</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Etes vous sur de vouloir supprimer cet élément?</h3>
 <div>
-    <h4>Samourai</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Force)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Force)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Arme)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Arme.Nom)
-        </dd>
-
-    </dl>
+    @Html.Partial("_SamouraiDetails")
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> 
-            @Html.ActionLink("Back to List", "Index","", htmlAttributes: new { @class = "btn btn-default" })
+            <input type="submit" value="Supprimer" class="btn btn-default" /> 
+            @Html.ActionLink("Retour à la liste", "Index","", htmlAttributes: new { @class = "btn btn-default" })
         </div>
     }
 </div>

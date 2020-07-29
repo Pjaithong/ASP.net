@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ArtMartials)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Potentiel)
+        </th>
         <th></th>
     </tr>
 
@@ -45,27 +48,24 @@
         <td>
         </td>
     }
-<td>
-    @if (item.ArtMartials != null)
-    {
-        @*int i = 0;
-            for (i=0; i < item.ArtMartials.Count - 1; i++)
-            {
-                @Html.DisplayFor(modelItem => item.ArtMartials.ElementAt(i).Nom)<br />
-            }*@
-
-        foreach (var artMartial in item.ArtMartials)
+    <td>
+        @if (item.ArtMartials.Count > 0)
         {
-            @Html.DisplayFor(modelItem => artMartial.Nom)<br />
+            foreach (var artMartial in item.ArtMartials)
+                {
+                    @Html.DisplayFor(modelItem => artMartial.Nom)<br />
+                }
         }
-    }
-</td>
-        
+    </td>
 
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
-        @Html.ActionLink("Details", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
+        @Html.DisplayFor(modelItem => item.Potentiel)
+    </td>
+
+    <td>
+        @Html.ActionLink("Modifier", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
+        @Html.ActionLink("Détails", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
+        @Html.ActionLink("Supprimer", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default" })
     </td>
     </tr>
 }

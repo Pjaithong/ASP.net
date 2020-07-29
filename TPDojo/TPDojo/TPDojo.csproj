@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202007281534242_initial.designer.cs">
       <DependentUpon>202007281534242_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007291036323_potentiel.cs" />
+    <Compile Include="Migrations\202007291036323_potentiel.designer.cs">
+      <DependentUpon>202007291036323_potentiel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SamouraiViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +198,8 @@
     <Content Include="Views\ArtMartials\Details.cshtml" />
     <Content Include="Views\ArtMartials\Edit.cshtml" />
     <Content Include="Views\ArtMartials\Index.cshtml" />
+    <Content Include="Views\Shared\_SamouraiDetails.cshtml" />
+    <Content Include="Views\Shared\_SamouraiCreateEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -220,6 +226,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007281534242_initial.resx">
       <DependentUpon>202007281534242_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007291036323_potentiel.resx">
+      <DependentUpon>202007291036323_potentiel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,36 +7,11 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Samourai</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Force)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Force)
-        </dd>
+    @Html.Partial("_SamouraiDetails")
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Arme)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Arme.Nom)
-        </dd>
-
-    </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) 
-    @Html.ActionLink("Back to List", "Index","", htmlAttributes: new { @class = "btn btn-default" })
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) 
+    @Html.ActionLink("Retour à la liste", "Index","", htmlAttributes: new { @class = "btn btn-default" })
 </p>

@@ -10,6 +10,7 @@ namespace TPDojoBO
     {
         private long id;
 
+        [System.ComponentModel.DisplayName("Arts Martiaux Maitrisés")]
         public String Nom { get; set; }
         public long Id { get => this.id; set => this.id=value; }
     }

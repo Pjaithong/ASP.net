@@ -90,22 +90,29 @@ namespace TPDojo.Controllers
         // GET: Samourais/Edit/5
         public ActionResult Edit(long? id)
         {
+            SamouraiViewModel vm = new SamouraiViewModel();
+            vm.Samourai = db.Samourais.Find(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SamouraiViewModel vm = new SamouraiViewModel();
-            vm.Armes = db.Armes.Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
-            
-            vm.Samourai = db.Samourais.Find(id);
-            if (vm.Samourai.Arme != null)
-            {
-                vm.IdArme = vm.Samourai.Arme.Id;
             }
             if (vm.Samourai == null)
             {
                 return HttpNotFound();
             }
+            if (vm.Samourai.Arme != null)
+            {
+                vm.IdArme = vm.Samourai.Arme.Id;
+            }
+            //vm.Armes = db.Armes.Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null).Select(s => s.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(a => !IdsArmes.Contains(a.Id)).
+                Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+
+            vm.ArtMartials.Add(new ArtMartial() { Nom = "Aucun" });
+            vm.ArtMartials.AddRange(db.ArtMartials.ToList());
+            vm.IdsArtMartials = vm.Samourai.ArtMartials.Select(a => a.Id).ToList();
+            
             return View(vm);
         }
 
@@ -120,12 +127,22 @@ namespace TPDojo.Controllers
             {
                 //Samourai samourai = db.Samourais.Find(vm.Samourai.Id);
                 //chargement des armes en mode eager
-                Samourai samourai = db.Samourais.Include(x=>x.Arme).FirstOrDefault(x=>x.Id==vm.Samourai.Id); 
+                //Samourai samourai = db.Samourais.Include(x=>x.Arme).FirstOrDefault(x=>x.Id==vm.Samourai.Id); 
+                var samourai = db.Samourais.Find(vm.Samourai.Id);
                 samourai.Force = vm.Samourai.Force;
                 samourai.Nom = vm.Samourai.Nom;
                 if (vm.IdArme!=null)
                 {
+                    var samouraisAvecArme = db.Samourais.Where(s => s.Arme.Id == vm.IdArme).ToList();
                     Arme arme = null;
+                    
+                    foreach (var item in samouraisAvecArme)
+                    {
+                        arme = item.Arme;
+                       // item.Arme = null;
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+
                     if (arme == null)
                     {
                         samourai.Arme = db.Armes.FirstOrDefault(x => x.Id == vm.IdArme);
@@ -139,10 +156,28 @@ namespace TPDojo.Controllers
                 {
                     samourai.Arme = null;
                 }
+
+                foreach (var item in samourai.ArtMartials)
+                {
+                    db.Entry(samourai).State = EntityState.Modified;
+                }
+                samourai.ArtMartials = db.ArtMartials.Where(a => vm.IdsArtMartials.Contains(a.Id)).ToList();
+
                 db.Entry(samourai).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null).Select(s => s.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(a => !IdsArmes.Contains(a.Id)).
+                Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+            if (vm.Samourai.Arme!=null)
+            {
+                vm.IdArme = vm.Samourai.Arme.Id;
+            }
+            vm.ArtMartials.Add(new ArtMartial() { Nom = "Aucun" });
+            vm.ArtMartials.AddRange(db.ArtMartials.ToList());
+            vm.ArtMartials = db.ArtMartials.Where(a => vm.IdsArtMartials.Contains(a.Id)).ToList();
             return View(vm);
         }
 
