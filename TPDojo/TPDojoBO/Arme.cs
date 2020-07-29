@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace TPDojoBO
 {
-    public class Arme
+    public class Arme : DbItem
     {
-        public int Id { get; set; }
+        private long id;
+
         public string Nom { get; set; }
         public int Degats { get; set; }
+        public long Id { get => this.id; set => this.id = value; }
     }
 }

@@ -90,6 +90,6 @@ C:\Users\patch\source\repos\TPDojo\TPDojo\bin\EntityFramework.dll
 C:\Users\patch\source\repos\TPDojo\TPDojo\bin\EntityFramework.SqlServer.dll
 C:\Users\patch\source\repos\TPDojo\TPDojo\bin\EntityFramework.xml
 C:\Users\patch\source\repos\TPDojo\TPDojo\bin\EntityFramework.SqlServer.xml
-C:\Users\patch\source\repos\TPDojo\TPDojo\obj\Debug\TPDojo.Migrations.InitialCreate.resources
+C:\Users\patch\source\repos\TPDojo\TPDojo\bin\TPDojoBO.dll.config
+C:\Users\patch\source\repos\TPDojo\TPDojo\obj\Debug\TPDojo.Migrations.initial.resources
 C:\Users\patch\source\repos\TPDojo\TPDojo\obj\Debug\TPDojo.csproj.GenerateResource.cache
-C:\Users\patch\source\repos\TPDojo\TPDojo\obj\Debug\TPDojo.Migrations.test1.resources

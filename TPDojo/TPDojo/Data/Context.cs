@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
+using TPDojoBO;
 
 namespace TPDojo.Data
 {
@@ -19,8 +21,16 @@ namespace TPDojo.Data
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Samourai>().HasMany(s => s.ArtMartials).WithMany();
+            base.OnModelCreating(modelBuilder);
+        }
         public System.Data.Entity.DbSet<TPDojoBO.Arme> Armes { get; set; }
 
         public System.Data.Entity.DbSet<TPDojoBO.Samourai> Samourais { get; set; }
+
+        public System.Data.Entity.DbSet<TPDojoBO.ArtMartial> ArtMartials { get; set; }
     }
 }

@@ -11,6 +11,10 @@ namespace TPDojo.Models
     {
         public Samourai Samourai { get; set; }
         public List<SelectListItem> Armes { get; set; } = new List<SelectListItem>();
-        public int? IdArme { get; set; }
+        public long? IdArme { get; set; }
+        public List<ArtMartial> ArtMartials { get; set; } = new List<ArtMartial>();
+        public List<long> IdsArtMartials { get; set; } = new List<long>();
+
+
     }
 }

@@ -4,3 +4,9 @@ C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.csproj.CoreCompil
 C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.dll
 C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.pdb
 C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.csprojAssemblyReference.cache
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\TPDojoBO.dll.config
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\EntityFramework.dll
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\EntityFramework.xml
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patch\source\repos\TPDojo\TPDojoBO\obj\Debug\TPDojoBO.csproj.CopyComplete
