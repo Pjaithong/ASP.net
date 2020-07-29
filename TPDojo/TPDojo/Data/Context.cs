@@ -25,6 +25,7 @@ namespace TPDojo.Data
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Samourai>().HasMany(s => s.ArtMartials).WithMany();
+            modelBuilder.Entity<Samourai>().HasOptional(x => x.Arme);
             base.OnModelCreating(modelBuilder);
         }
         public System.Data.Entity.DbSet<TPDojoBO.Arme> Armes { get; set; }
