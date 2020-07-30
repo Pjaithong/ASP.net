@@ -73,6 +73,7 @@ namespace TPDojo.Controllers
                     }
                     samourai.Arme = db.Armes.Find(vm.IdArme);
                 }
+                
                 samourai.ArtMartials = db.ArtMartials.Where(a => vm.IdsArtMartials.Contains(a.Id)).ToList();
                 db.Samourais.Add(samourai);
                 db.SaveChanges();
@@ -100,17 +101,18 @@ namespace TPDojo.Controllers
             {
                 return HttpNotFound();
             }
+           
+            //vm.Armes = db.Armes.Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null && s.Id!=id).Select(s => s.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(a => !IdsArmes.Contains(a.Id)).
+               Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
             if (vm.Samourai.Arme != null)
             {
                 vm.IdArme = vm.Samourai.Arme.Id;
             }
-            //vm.Armes = db.Armes.Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
-            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null).Select(s => s.Arme.Id).ToList();
-            vm.Armes = db.Armes.Where(a => !IdsArmes.Contains(a.Id)).
-                Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
-
             vm.ArtMartials.Add(new ArtMartial() { Nom = "Aucun" });
             vm.ArtMartials.AddRange(db.ArtMartials.ToList());
+            //pré-selectionné
             vm.IdsArtMartials = vm.Samourai.ArtMartials.Select(a => a.Id).ToList();
             
             return View(vm);
@@ -139,7 +141,7 @@ namespace TPDojo.Controllers
                     foreach (var item in samouraisAvecArme)
                     {
                         arme = item.Arme;
-                       // item.Arme = null;
+                        item.Arme = null;
                         db.Entry(item).State = EntityState.Modified;
                     }
 
@@ -168,7 +170,7 @@ namespace TPDojo.Controllers
                 return RedirectToAction("Index");
             }
 
-            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null).Select(s => s.Arme.Id).ToList();
+            List<long> IdsArmes = db.Samourais.Where(s => s.Arme != null && s.Id!=vm.Samourai.Id).Select(s => s.Arme.Id).ToList();
             vm.Armes = db.Armes.Where(a => !IdsArmes.Contains(a.Id)).
                 Select(x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
             if (vm.Samourai.Arme!=null)
